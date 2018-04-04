@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ controller_name }}!{% endblock %}
+{% block body %}
+<div class="page-wrapper">
+    <header id="header" class="alt">
+        <h1><a href="index.html">Solid State</a></h1>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
+    {{ include('menuProfesseur.html.twig') }}
+    <section id="banner">
+        <div class="inner">
+            <div class="logo"><span class="icon fa-film"></span></div>
+            <h2>Voici GoodMovie</h2>
+            <p>Un site responsive d&eacute;velopp&eacute; &agrave; partir de <a href="https://symfony.com/4">Symfony 4</a></p>
+        </div>
+    </section>
+    <section id="wrapper">
+        <section id="one" class="wrapper spotlight style1">
+            <div class="inner">
+                <a href="#" class="image"><img src="{{ asset('images/logoflat.png') }}" alt="" /></a>
+                <div class="content">
+                    <h2 class="major">BTS SIO</h2>
+                    <p>Une production SLAM... du
+                        <a href="http://www.vinci-melun.org"> Lyc&eacute;e L&eacute;onard de Vinci</a></p>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section id="footer">
+        <div class="inner">
+            <ul class="copyright">
+                <li>&copy; Untitled Inc. All rights reserved.</li><li>Design:
+                    <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+</div>
+{% endblock %}

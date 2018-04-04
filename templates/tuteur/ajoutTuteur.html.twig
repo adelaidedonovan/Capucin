@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+    <div class="page-wrapper">
+        <header id="header" class="alt">
+            <h1><a href="index.html">Solid State</a></h1>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+        {{ include('menuEleve.html.twig') }}
+        <section id="banner">
+            <div class="inner">
+                <div class="logo"><span class="icon fa-film"></span></div>
+                <h2>Voici GoodMovie</h2>
+                <p>Un site responsive d&eacute;velopp&eacute; &agrave; partir de <a href="https://symfony.com/4">Symfony 4</a></p>
+            </div>
+        </section>
+        <div class="wrapper">
+            <div class="inner">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}</div>
+        </div>
+        <section id="footer">
+            <div class="inner">
+                <ul class="copyright">
+                    <li>&copy; Untitled Inc. All rights reserved.</li><li>Design:
+                        <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+{% endblock %}

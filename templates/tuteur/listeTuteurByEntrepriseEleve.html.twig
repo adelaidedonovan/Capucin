@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block title %}{% endblock %}
+{% block body %}
+    <div class="page-wrapper">
+        <header id="header" class="alt">
+            <h1><a href="index.html">Solid State</a></h1>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+        {{ include('menuEleve.html.twig') }}
+        <section id="banner">
+            <div class="inner">
+                <div class="logo"><span class="icon fa-film"></span></div>
+                <h2>Voici GoodMovie</h2>
+                <p>Un site responsive d&eacute;velopp&eacute; &agrave; partir de <a href="https://symfony.com/4">Symfony 4</a></p>
+            </div>
+        </section>
+        <div class="wrapper">
+            <div class="inner">
+                <table class="table table-hover table-warning">
+                    <thead>
+                    <tr>
+                        <th> nom Entreprise</th>
+                        <th>nomTuteur</th>
+                        <th>prenomTuteur</th>
+                        <th>mailTuteur</th>
+                        <th>telTuteur</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in listeTuteurByEntreprise %}
+                        <tr>
+                            <td> {{ i.entreprise.nomEntreprise }}</td>
+                            <td>{{  i.nomTuteur }}</td>
+                            <td>{{  i.prenomTuteur}}</td>
+                            <td>{{  i.mailTuteur }}</td>
+                            <td>{{  i.telTuteur }}</td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{{ path('ajoutTuteur') }}"><span class="icon fa fa-users"></span> Ajouter un Tuteur (entreprise déja présent)</a>
+                <br>
+                <a href="{{ path('ajoutStage') }}"><span class="icon fa fa-users"></span> Ajouter un Stage (entreprise et tuteur déja présent)</a>
+            </div>
+        </div>
+
+        <section id="footer">
+            <div class="inner">
+                <ul class="copyright">
+                    <li>&copy; Untitled Inc. All rights reserved.</li><li>Design:
+                        <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+{% endblock %}
