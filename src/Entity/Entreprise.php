@@ -36,7 +36,7 @@ class Entreprise
     private $villeEntreprise;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      * @Assert\Length(
      *      min = 3,
      *      max = 5,
@@ -49,7 +49,7 @@ class Entreprise
     /**
      * @ORM\Column(type="string")
      */
-    private $adressseEntreprise;
+    private $adresseEntreprise;
 
     /**
      * @ORM\Column(type="string")
@@ -61,7 +61,7 @@ class Entreprise
     private $mailEntreprise;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      * @Assert\Length(
      *      min = 9,
      *      max = 10,
@@ -127,17 +127,17 @@ class Entreprise
     /**
      * @return mixed
      */
-    public function getAdressseEntreprise()
+    public function getAdresseEntreprise()
     {
-        return $this->adressseEntreprise;
+        return $this->adresseEntreprise;
     }
 
     /**
-     * @param mixed $adressseEntreprise
+     * @param mixed $adresseEntreprise
      */
-    public function setAdressseEntreprise($adressseEntreprise): void
+    public function setAdresseEntreprise($adresseEntreprise): void
     {
-        $this->adressseEntreprise = $adressseEntreprise;
+        $this->adresseEntreprise = $adresseEntreprise;
     }
 
     /**

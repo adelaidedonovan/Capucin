@@ -21,9 +21,8 @@ class TuteurController extends Controller
     {
 
 
-
         $item = new Tuteur();
-       $form=$this->createForm(TuteurType::class,$item);
+        $form = $this->createForm(TuteurType::class, $item);
 
         // Par défaut, le formulaire renvoie une demande POST au même contrôleur qui la restitue.
         if ($request->isMethod('POST')) {
@@ -35,9 +34,9 @@ class TuteurController extends Controller
                     $em = $this->getDoctrine()->getManager();
                     $em->persist($item);
                     $em->flush();
-                    return $this->redirectToRoute('ajoutStage');
+                    return $this->redirectToRoute('listeEntrepriseEleve');
                 }
-                return $this->redirectToRoute('ajoutStage');
+                return $this->redirectToRoute('listeEntrepriseEleve');
             }
         }
         return $this->render('tuteur/ajoutTuteur.html.twig', array(
@@ -45,4 +44,17 @@ class TuteurController extends Controller
         ));
     }
 
+
+    /**
+     * @Route("/listeTuteurByEntreprise/{id}", name="listeTuteurByEntreprise")
+     */
+    public function listeTuteurByEntreprise($id)
+    {
+        $listeTuteurByEntreprise = $this->getDoctrine()
+            ->getRepository(Tuteur::class)
+            ->findBy(array('entreprise' => $id));
+        return $this->render('tuteur/listeTuteurByEntrepriseEleve.html.twig', compact('listeTuteurByEntreprise'));
+
+
+    }
 }

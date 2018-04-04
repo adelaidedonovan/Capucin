@@ -28,7 +28,7 @@
                 <th>email</th>
                 <th>Téléphone</th>
                 <th>Activité</th>
-
+                <th>liste des tuteurs</th>
 
 
             </tr>
@@ -39,18 +39,21 @@
                     <td>{{  i.nomEntreprise }}</td>
                     <td>{{  i.villeEntreprise}}</td>
                     <td>{{  i.cpEntreprise }}</td>
-                    <td>{{  i.adressseEntreprise }}</td>
+                    <td>{{  i.adresseEntreprise }}</td>
                     <td>{{  i.mailEntreprise }}</td>
                     <td>{{  i.telEntreprise }}</td>
                     <td>{{  i.activiteEntreprise }}</td>
+                    <td><a href="{{ path('listeTuteurByEntreprise', {'id': i.id}) }}"><span class="icon fa fa-users"></span></a></td>
 
                 </tr>
             {% endfor %}
             </tbody>
         </table>
-                <a href="{{ path('ajoutTuteur') }}"><span class="icon fa fa-users"></span> Ajouter un Tuteur (entreprise déja présent)</a>
+                <a href="{{ path('ajoutEntreprise') }}"><span class="icon fa fa-users"></span> Ajouter une entreprise</a>
+                <br>
+                <a href="{{ path('ajoutTuteur') }}"><span class="icon fa fa-users"></span> Ajouter un Tuteur a une entreprise</a>
             <br>
-                <a href="{{ path('ajoutStage') }}"><span class="icon fa fa-users"></span> Ajouter un Stage (entreprise et tuteur déja présent)</a>
+                <a href="{{ path('ajoutStage') }}"><span class="icon fa fa-users"></span> Déclarer votre stage</a>
     </div>
         </div>
 

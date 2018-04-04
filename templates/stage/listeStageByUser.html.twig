@@ -21,27 +21,26 @@
                 <table class="table table-hover table-warning">
                     <thead>
                     <tr>
-                        <th>Entreprise</th>
-                        <th>Ville</th>
-                        <th>Code Postal</th>
-                        <th>Adresse</th>
-                        <th>email</th>
-                        <th>Téléphone</th>
-                        <th>Activité</th>
+                        <th>nom Eleve</th>
+                        <th>prenom Eleve</th>
+                        <th>année scolaire</th>
+                        <th>classe Eleve</th>
+                        <th>nom du Tuteur</th>
+                        <th>nom Entreprise</th>
 
 
                     </tr>
                     </thead>
                     <tbody>
-                    {% for i in listeEntreprise %}
+                    {% for i in listeStageByUser %}
                         <tr>
-                            <td>{{  i.nomEntreprise }}</td>
-                            <td>{{  i.villeEntreprise}}</td>
-                            <td>{{  i.cpEntreprise }}</td>
-                            <td>{{  i.adresseEntreprise }}</td>
-                            <td>{{  i.mailEntreprise }}</td>
-                            <td>{{  i.telEntreprise }}</td>
-                            <td>{{  i.activiteEntreprise }}</td>
+                            <td>{{  i.user.nomUser }}</td>
+                            <td>{{  i.user.prenomUser}}</td>
+                            <td>{{  i.user.anneeScolaire}}</td>
+                            <td>{{  i.user.classeUser}}</td>
+                            <td>{{  i.tuteur.nomTuteur}}</td>
+                            <td>{{  i.tuteur.entreprise.nomEntreprise}}</td>
+
 
                         </tr>
                     {% endfor %}
@@ -49,14 +48,14 @@
                 </table>
             </div>
         </div>
-    <section id="footer">
-        <div class="inner">
-            <ul class="copyright">
-                <li>&copy; Untitled Inc. All rights reserved.</li><li>Design:
-                    <a href="http://html5up.net">HTML5 UP</a></li>
-            </ul>
-        </div>
-    </section>
+        <section id="footer">
+            <div class="inner">
+                <ul class="copyright">
+                    <li>&copy; Untitled Inc. All rights reserved.</li><li>Design:
+                        <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </section>
     </div>
 {% endblock %}
 

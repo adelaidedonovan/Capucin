@@ -43,7 +43,7 @@ class Tuteur
 
     private $mailTuteur;
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      * @Assert\Length(
      *      min = 9,
      *      max = 10,

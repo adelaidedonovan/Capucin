@@ -41,4 +41,24 @@ class StageController extends Controller
         ));
     }
 
+
+
+
+
+
+
+
+
+    /**
+     * @Route("/listeStageByUser/", name="listeStageByUser")
+     */
+    public function listeStageByUser()
+    {
+        $listeStageByUser = $this->getDoctrine()
+            ->getRepository(Stage::class)
+            ->findAll();
+        return $this->render('stage/listeStageByUser.html.twig', compact('listeStageByUser'));
+
+
+    }
 }
